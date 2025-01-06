@@ -108,6 +108,138 @@ function About() {
             This calculator was developed by Simen Guttormsen, a Norwegian pole vaulter and master's student at Duke University. All questions or suggested improvements can be directed to <a href="mailto:simen.guttormsen@gmail.com">simen.guttormsen@gmail.com</a>.
           </p>
         </section>
+
+        <section className="about-section">
+          <h2>Understanding Results</h2>
+          <p>
+            When using the calculator, you might see "NaN" (Not a Number) in some cases:
+          </p>
+          <ul>
+            <li>When the required performance points would need to be over 1400 to achieve the placing target</li>
+            <li>When the calculation would result in an impossible performance for that event</li>
+          </ul>
+          <p>
+            For example, if you input 1300 points and look at first place in OW (which adds 375 bonus points), 
+            you would need a performance worth more than 1400 points to achieve this - which isn't possible 
+            with the World Athletics scoring tables.
+          </p>
+        </section>
+
+        <section className="about-section">
+          <h2>Competition Categories</h2>
+          <div className="competition-categories">
+            <div className="category">
+              <h3>OW (Olympic/World)</h3>
+              <ul>
+                <li>Olympic Games</li>
+                <li>World Athletics Championships</li>
+              </ul>
+            </div>
+
+            <div className="category">
+              <h3>DF (Diamond Final)</h3>
+              <ul>
+                <li>Diamond League Finals*</li>
+              </ul>
+            </div>
+
+            <div className="category">
+              <h3>GW (Gold/World)</h3>
+              <ul>
+                <li>World Athletics Indoor Championships</li>
+                <li>World Athletics Cross Country Championships (senior race)</li>
+                <li>Diamond League Meetings (DL disciplines only)</li>
+                <li>World Athletics Continental Tour Gold (Hammer Throw only)</li>
+              </ul>
+            </div>
+
+            <div className="category">
+              <h3>GL (Gold Level)</h3>
+              <ul>
+                <li>Area Senior Outdoor Championships</li>
+              </ul>
+            </div>
+
+            <div className="category">
+              <h3>Category A</h3>
+              <ul>
+                <li>Major Games (All-African, Asian, Commonwealth, Pan American, European, South American)</li>
+                <li>Diamond League Meetings (Additional international events with at least 50% of DL prize money)</li>
+                <li>World Athletics Continental Tour Gold Meetings**</li>
+                <li>World Athletics Indoor Tour Gold Level Meetings**</li>
+                <li>Area Senior Indoor Championships</li>
+              </ul>
+            </div>
+
+            <div className="category">
+              <h3>Category B</h3>
+              <ul>
+                <li>Regional Games & Athletics Championships</li>
+                <li>World Athletics Continental Tour Silver Meetings**</li>
+                <li>World Athletics Indoor Tour Silver Meetings**</li>
+                <li>Area second tier Championships</li>
+                <li>National Senior Championships (In Outdoor Main Events)</li>
+                <li>NCAA Div. I Outdoor Championships</li>
+              </ul>
+            </div>
+
+            <div className="category">
+              <h3>Category C</h3>
+              <ul>
+                <li>World Athletics Series - U20 events</li>
+                <li>World Athletics Continental Tour Bronze Meetings**</li>
+                <li>World Athletics Indoor Tour Bronze Meetings**</li>
+                <li>Asian Grand Prix Series</li>
+                <li>Area third tier Championships</li>
+                <li>Regional Games & Championships</li>
+                <li>NCAA Div. I Indoor Championships</li>
+              </ul>
+            </div>
+
+            <div className="category">
+              <h3>Category D</h3>
+              <ul>
+                <li>Regional Championships, Games and Cups - third tier</li>
+                <li>World Athletics Continental Tour Challenger Series</li>
+                <li>World Athletics Indoor Tour Challenger Series</li>
+                <li>Area fourth tier Championships</li>
+                <li>Traditional International Meetings</li>
+                <li>National Senior Championships (indoor and Similar Events)</li>
+                <li>Mediterranean U23 Championships</li>
+                <li>Youth Olympic Games</li>
+              </ul>
+            </div>
+
+            <div className="category">
+              <h3>Category E</h3>
+              <ul>
+                <li>International Matches (Senior)</li>
+                <li>National Winter Throwing Championships</li>
+                <li>Designated national permit meetings</li>
+                <li>Area U18 Championships</li>
+                <li>European Youth Olympic Festival</li>
+                <li>Mediterranean U23 Indoor Championships</li>
+              </ul>
+            </div>
+
+            <div className="category">
+              <h3>Category F</h3>
+              <ul>
+                <li>National permit meetings</li>
+                <li>Other competitions</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="footnotes">
+            <p>* Athletes who are NOT invited based on their standings in the Diamond League prior to the Final (i.e. Wild Card athletes) will receive Diamond League ranking points (GW category) and not Diamond League Final ranking points (DF category).</p>
+            <p>** Only events awarding official Prize Money in accordance with the Tour Regulations.</p>
+          </div>
+
+          <div className="source">
+            <p>Source: <a href="https://worldathletics.org/world-ranking-rules/track-field-events-2024" target="_blank" rel="noopener noreferrer">World Athletics Ranking Rules 2024</a></p>
+          </div>
+        </section>
       </div>
     </div>
   );

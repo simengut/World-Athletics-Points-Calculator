@@ -20,7 +20,7 @@ export const formatTimeInput = (input, eventType) => {
 // Format performance output based on event type
 export const formatPerformance = (performance, eventType) => {
   // For middle/long distance events
-  if (['800m', '1500m', '3000m', '5000m', '10000m'].includes(eventType)) {
+  if (['800m', '1500m', '3000m', '3000mSC', '5000m', '10000m'].includes(eventType)) {
     const minutes = Math.floor(performance / 60);
     const seconds = (performance % 60).toFixed(2);
     return `${minutes}:${seconds.padStart(5, '0')}`;
@@ -41,7 +41,7 @@ export const getPlaceholderText = (eventType, mode) => {
     // For running events
     if (['100m', '200m', '400m', '60m', '100mH', '110mH', '400mH', '60mH'].includes(eventType)) {
       return `Enter ${eventType} time (ss.xx)`;
-    } else if (['800m', '1500m', '3000m', '5000m', '10000m'].includes(eventType)) {
+    } else if (['800m', '1500m', '3000m', '3000mSC', '5000m', '10000m'].includes(eventType)) {
       return `Enter ${eventType} time (mm:ss.xx)`;
     } 
     // For field events

@@ -97,6 +97,11 @@ function CompetitionTable({ points, eventType, gender, season }) {
   return (
     <div className="competition-table">
       <h2>Competition Level Comparison</h2>
+      <div className="table-info">
+        <p>This table shows the required performances to achieve the same ranking points at different competition levels.</p>
+        <p>Each competition category (OW, DF, etc.) awards bonus points based on placement. 
+           A lower required performance means more bonus points are awarded at that competition level.</p>
+      </div>
 
       {/* Base Meet Selection */}
       <div className="settings-grid">

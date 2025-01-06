@@ -47,7 +47,7 @@ function App() {
           season
         );
         
-        if (['800m', '1500m', '3000m', '5000m', '10000m'].includes(eventType)) {
+        if (['800m', '1500m', '3000m', '3000mSC', '5000m', '10000m'].includes(eventType)) {
           const minutes = Math.floor(performance / 60);
           const seconds = (performance % 60).toFixed(2);
           setPerformance(`${minutes}:${seconds.padStart(5, '0')}`);
@@ -109,6 +109,11 @@ function App() {
         {activeTab === 'calculator' ? (
           <div className="calculator-page">
             <div className="calculator-sidebar">
+              <h1>World Athletics Points Calculator</h1>
+              <p className="calculator-info">
+                Enter a performance to calculate points, or enter points to find equivalent performances. 
+                Points range: 0-1400. Higher points indicate better performances.
+              </p>
               {calculatorForm}
             </div>
             <div className="calculator-main">
