@@ -766,3 +766,128 @@ h4, h5, h6 { font-size: 10px; }
   width: 90%; /* Change from 66.66% */
   padding-left: 20px;
 }
+
+/* Base layout */
+.App {
+  min-height: 100vh;
+}
+
+.calculator-page, .competition-page {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.calculator-sidebar, .competition-sidebar {
+  width: 50%;
+}
+
+.calculator-main, .competition-main {
+  width: 50%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .calculator-page, .competition-page {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .calculator-sidebar, .competition-sidebar,
+  .calculator-main, .competition-main {
+    width: 100%;
+  }
+
+  /* Form adjustments */
+  .calculator-form {
+    margin-bottom: 20px;
+  }
+
+  /* Table adjustments */
+  .competition-table {
+    font-size: 14px;
+  }
+
+  .meet-row {
+    margin-bottom: 15px;
+  }
+
+  .performances {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+  }
+
+  /* Event comparison adjustments */
+  .event-comparison {
+    margin-top: 20px;
+  }
+
+  .event-section {
+    padding: 10px;
+  }
+
+  /* Toggle container */
+  .toggle-container {
+    font-size: 14px;
+  }
+
+  /* Wind section */
+  .wind-section {
+    padding: 15px;
+  }
+
+  .wind-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Even smaller screens */
+@media (max-width: 480px) {
+  .performances {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .calculator-form input,
+  .calculator-form select {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+  }
+
+  /* Navbar adjustments */
+  .navbar {
+    padding: 10px;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .App {
+    background-color: #121212;
+    color: #ffffff;
+  }
+
+  .calculator-form,
+  .competition-table,
+  .event-comparison {
+    background-color: #1e1e1e;
+  }
+
+  input, select {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    border-color: #404040;
+  }
+}
