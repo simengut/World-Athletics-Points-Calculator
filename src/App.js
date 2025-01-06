@@ -8,9 +8,8 @@ import WindAdjustment from './components/CalculatorForm/WindAdjustment';
 import ResultsDisplay from './components/CalculatorForm/ResultsDisplay';
 import EventComparison from './components/EventComparison';
 import { calculatePoints, calculatePerformance } from './utils/calculators';
-import { formatTimeInput } from './utils/formatters';
 import { EVENT_CODES } from './utils/eventCodes';
-import { calculateWindModification, needsWindInput } from './utils/windModification';
+import { needsWindInput } from './utils/windModification';
 
 function App() {
   const [activeTab, setActiveTab] = useState('calculator');

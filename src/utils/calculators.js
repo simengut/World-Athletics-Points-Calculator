@@ -1,5 +1,4 @@
 import { formatTimeInput } from './formatters';
-import { EVENT_CODES } from './eventCodes';
 import { calculateWindModification, needsWindInput } from './windModification';
 import { coeffs, field_events, thons, COMPETITION_POINTS } from './coefficients';
 
