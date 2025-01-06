@@ -6,12 +6,12 @@ export const EVENT_CODES = {
   '800m': '800m',
   '1500m': '1500m',
   '3000m': '3000m',
+  '3000mSC': '3000mSC',
   '5000m': '5000m',
   '10000m': '10000m',
   '110mH': '110mH',
   '100mH': '100mH',
   '400mH': '400mH',
-  '3000mSC': '3000mSC',
   
   // Field Events
   'High Jump': 'HJ',

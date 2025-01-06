@@ -101,6 +101,7 @@ function Form({
                 <option value="3000m">3000m</option>
                 <option value="5000m">5000m</option>
                 <option value="10000m">10000m</option>
+                <option value="3000mSC">3000mSC</option>
                 <option value={gender === 'mens' ? '110mH' : '100mH'}>
                   {gender === 'mens' ? '110m Hurdles' : '100m Hurdles'}
                 </option>

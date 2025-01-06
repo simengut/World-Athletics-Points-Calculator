@@ -41,7 +41,7 @@ function EventComparison({ points, gender, season }) {
     if (points) {
       const allEvents = [
         ...(season === 'indoor' ? ['60m', '200m', '400m', '60mH'] : ['100m', '200m', '400m', '100mH', '110mH', '400mH']),
-        '800m', '1500m', '3000m',
+        '800m', '1500m', '3000m', '3000mSC',
         ...(season === 'outdoor' ? ['5000m', '10000m'] : []),
         'High Jump', 'Pole Vault', 'Long Jump', 'Triple Jump',
         'Shot Put',
@@ -119,7 +119,7 @@ function EventComparison({ points, gender, season }) {
           ? ['60m', '200m', '400m', '60mH']
           : ['100m', '200m', '400m', '100mH', '110mH', '400mH']
       )}
-      {renderEventSection('Middle Distance', ['800m', '1500m', '3000m'])}
+      {renderEventSection('Middle Distance', ['800m', '1500m', '3000m', '3000mSC'])}
       {season === 'outdoor' && renderEventSection('Long Distance', ['5000m', '10000m'])}
       {renderEventSection('Jumps', [
         'High Jump', 'Pole Vault', 'Long Jump', 'Triple Jump'
