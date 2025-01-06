@@ -65,8 +65,8 @@ function EventComparison({ points, gender, season }) {
     }
 
     // For track events (ending with 'm' or 'mH')
-    if (event.endsWith('m') || event.endsWith('mH')) {
-      if (['800m', '1500m', '3000m', '5000m', '10000m'].includes(event)) {
+    if (event.endsWith('m') || event.endsWith('mH') || event.endsWith('mSC')) {
+      if (['800m', '1500m', '3000m', '3000mSC', '5000m', '10000m'].includes(event)) {
         // Format mm:ss.xx for middle/long distance
         const minutes = Math.floor(performance / 60);
         const seconds = (performance % 60).toFixed(2);

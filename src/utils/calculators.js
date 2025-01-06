@@ -1,6 +1,6 @@
 import { formatTimeInput } from './formatters';
 import { calculateWindModification, needsWindInput } from './windModification';
-import { coeffs, field_events, thons, COMPETITION_POINTS } from './coefficients';
+import { coeffs, field_events, thons, COMPETITION_POINTS, SPECIAL_EVENTS, SPECIAL_EVENTS_POINTS } from './coefficients';
 
 export const calculatePoints = ({
   mode,
@@ -82,10 +82,11 @@ export const calculatePerformance = (event, points, gender = 'mens', season = 'o
 export const calculatePerformancesBatch = (basePoints, eventType, gender = 'mens', season = 'outdoor') => {
     try {
         const results = {};
+        const pointsTable = SPECIAL_EVENTS.includes(eventType) ? SPECIAL_EVENTS_POINTS : COMPETITION_POINTS;
         
-        for (const meet in COMPETITION_POINTS) {
+        for (const meet in pointsTable) {
             const meetResults = {};
-            for (const [place, bonus] of Object.entries(COMPETITION_POINTS[meet])) {
+            for (const [place, bonus] of Object.entries(pointsTable[meet])) {
                 try {
                     const requiredPoints = basePoints - bonus;
                     if (requiredPoints > 1400) {

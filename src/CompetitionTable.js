@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { formatPerformance } from './utils/formatters';
-import { COMPETITION_POINTS, MEET_LABELS } from './utils/competitionPoints';
+import { COMPETITION_POINTS, MEET_LABELS, SPECIAL_EVENTS, SPECIAL_EVENTS_POINTS } from './utils/competitionPoints';
 import { EVENT_CODES } from './utils/eventCodes';
 import { calculatePerformancesBatch } from './utils/calculators';
 
@@ -88,6 +88,11 @@ function CompetitionTable({ points, eventType, gender, season }) {
   }, [points, eventType, gender, season, baseMeet, basePlace]);
 
   if (!points) return null;
+
+  const getPoints = (basePoints, meet, place) => {
+    const pointsTable = SPECIAL_EVENTS.includes(eventType) ? SPECIAL_EVENTS_POINTS : COMPETITION_POINTS;
+    return pointsTable[meet][place] ? (basePoints + pointsTable[meet][place]) : '-';
+  };
 
   return (
     <div className="competition-table">
@@ -194,9 +199,7 @@ function CompetitionTable({ points, eventType, gender, season }) {
                     <td>{place}</td>
                     {Object.keys(MEET_LABELS).map(meet => (
                       <td key={meet}>
-                        {points && COMPETITION_POINTS[meet][place] ? 
-                          (points + COMPETITION_POINTS[meet][place]) : 
-                          '-'}
+                        {points ? getPoints(points, meet, place) : '-'}
                       </td>
                     ))}
                   </tr>
