@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import { formatPerformance } from './utils/formatters';
-import { COMPETITION_POINTS, MEET_LABELS, SPECIAL_EVENTS, SPECIAL_EVENTS_POINTS, COMBINED_EVENTS, COMBINED_EVENTS_POINTS, getPointsTable } from './utils/competitionPoints';
+import { COMPETITION_POINTS, MEET_LABELS, COMBINED_EVENTS, getPointsTable } from './utils/competitionPoints';
 import { EVENT_CODES } from './utils/eventCodes';
 import { calculatePerformancesBatch } from './utils/calculators';
 

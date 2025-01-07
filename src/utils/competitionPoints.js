@@ -179,7 +179,6 @@ export const getPointsTable = (eventType) => {
 // Update the existing calculatePerformancesBatch function to use the correct points table
 export const calculatePerformancesBatch = (basePoints, eventType, gender = 'mens', season = 'outdoor') => {
     try {
-        const results = {};
         let pointsTable;
         
         if (SPECIAL_EVENTS.includes(eventType)) {
