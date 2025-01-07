@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { formatPerformance } from './utils/formatters';
-import { COMPETITION_POINTS, MEET_LABELS, SPECIAL_EVENTS, SPECIAL_EVENTS_POINTS } from './utils/competitionPoints';
+import { COMPETITION_POINTS, MEET_LABELS, SPECIAL_EVENTS, SPECIAL_EVENTS_POINTS, COMBINED_EVENTS, COMBINED_EVENTS_POINTS, getPointsTable } from './utils/competitionPoints';
 import { EVENT_CODES } from './utils/eventCodes';
 import { calculatePerformancesBatch } from './utils/calculators';
 
@@ -87,11 +87,46 @@ function CompetitionTable({ points, eventType, gender, season }) {
     calculateEquivalentPerformances();
   }, [points, eventType, gender, season, baseMeet, basePlace]);
 
-  if (!points) return null;
+  const formatPerformance = (performance, eventType) => {
+    // First check if performance is valid
+    if (!performance || performance === '-' || performance === 'NaN' || isNaN(performance)) {
+      return '-';
+    }
+
+    // For combined events, return whole numbers
+    if (COMBINED_EVENTS.includes(eventType)) {
+      return Math.round(performance);
+    }
+
+    // For track events (ending with 'm' or 'mH' or 'mSC')
+    if (eventType.endsWith('m') || eventType.endsWith('mH') || eventType.endsWith('mSC')) {
+      if (['800m', '1500m', '3000m', '3000mSC', '5000m', '10000m'].includes(eventType)) {
+        // Format mm:ss.xx for middle/long distance
+        const minutes = Math.floor(performance / 60);
+        const seconds = (performance % 60).toFixed(2);
+        return `${minutes}:${seconds.padStart(5, '0')}`;
+      }
+      // Format ss.xx for sprints
+      return Number(performance).toFixed(2);
+    }
+
+    // For field events
+    return Number(performance).toFixed(2);
+  };
+
+  if (!points) {
+    return (
+      <div className="competition-table">
+        <p>Please enter a performance or points in the calculator first.</p>
+      </div>
+    );
+  }
 
   const getPoints = (basePoints, meet, place) => {
-    const pointsTable = SPECIAL_EVENTS.includes(eventType) ? SPECIAL_EVENTS_POINTS : COMPETITION_POINTS;
-    return pointsTable[meet][place] ? (basePoints + pointsTable[meet][place]) : '-';
+    const pointsTable = getPointsTable(eventType);
+    return pointsTable[meet]?.[place] ? 
+      (parseInt(basePoints) + parseInt(pointsTable[meet][place])) : 
+      '-';
   };
 
   return (
@@ -136,10 +171,12 @@ function CompetitionTable({ points, eventType, gender, season }) {
           <div className="setting-group">
             <label>Total Points</label>
             <div className="points-breakdown">
-              {points} + {basePlace === 'other' ? '0' : COMPETITION_POINTS[baseMeet][basePlace]} = {
-                basePlace === 'other' ? 
-                points : 
-                points + COMPETITION_POINTS[baseMeet][basePlace]
+              {points} + {basePlace === 'other' ? '0' : 
+                getPointsTable(eventType)[baseMeet][basePlace]
+              } = {
+                basePlace === 'other' 
+                  ? points 
+                  : points + getPointsTable(eventType)[baseMeet][basePlace]
               }
             </div>
           </div>
@@ -185,8 +222,8 @@ function CompetitionTable({ points, eventType, gender, season }) {
 
       {/* Total Points Table */}
       <div className="table-section">
-        <h3>Total Points (Performance + Placement)</h3>
-        <div className="equivalency-table">
+        <h3>Total Points (Performance + Placing)</h3>
+        <div className="points-table">
           <table>
             <thead>
               <tr>

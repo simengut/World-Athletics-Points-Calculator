@@ -85,7 +85,7 @@ export const SPECIAL_EVENTS_POINTS = {
     }
 };
 
-export const SPECIAL_EVENTS = ['5000m', '3000mSC'];
+export const SPECIAL_EVENTS = ['5000m', '3000mSC', '10000m'];
 
 export const COMBINED_EVENTS_POINTS = {
     'OW': {
@@ -125,6 +125,56 @@ export const COMBINED_EVENTS_POINTS = {
 };
 
 export const COMBINED_EVENTS = ['Decathlon', 'Heptathlon', 'Pentathlon'];
+
+export const TEN_K_POINTS = {
+    'OW': {
+        1: 280, 2: 250, 3: 225, 4: 205, 5: 185, 6: 170, 7: 155, 8: 145,
+        9: 95, 10: 85, 11: 75, 12: 65, 13: 60, 14: 55, 15: 50, 16: 40
+    },
+    'DF': {
+        1: 175, 2: 150, 3: 135, 4: 120, 5: 105, 6: 95, 7: 85, 8: 75,
+        9: 50, 10: 40, 11: 35, 12: 30
+    },
+    'GW': {
+        1: 140, 2: 120, 3: 105, 4: 90, 5: 80, 6: 70, 7: 60, 8: 50,
+        9: 40, 10: 32, 11: 27, 12: 24
+    },
+    'GL': {
+        1: 110, 2: 90, 3: 75, 4: 65, 5: 55, 6: 50, 7: 45, 8: 40,
+        9: 30, 10: 25, 11: 22, 12: 20
+    },
+    'A': {
+        1: 80, 2: 70, 3: 60, 4: 50, 5: 45, 6: 40, 7: 35, 8: 30
+    },
+    'B': {
+        1: 60, 2: 50, 3: 45, 4: 40, 5: 35, 6: 30, 7: 25, 8: 20
+    },
+    'C': {
+        1: 45, 2: 38, 3: 32, 4: 26, 5: 22, 6: 19, 7: 17, 8: 15
+    },
+    'D': {
+        1: 30, 2: 22, 3: 18, 4: 16, 5: 14, 6: 12, 7: 11, 8: 10
+    },
+    'E': {
+        1: 20, 2: 14, 3: 10, 4: 8, 5: 7, 6: 6
+    },
+    'F': {
+        1: 10, 2: 6, 3: 3
+    }
+};
+
+// Update getPointsTable function to handle 10000m
+export const getPointsTable = (eventType) => {
+    if (eventType === '10000m') {
+        return TEN_K_POINTS;
+    } else if (SPECIAL_EVENTS.includes(eventType)) {
+        return SPECIAL_EVENTS_POINTS;
+    } else if (COMBINED_EVENTS.includes(eventType)) {
+        return COMBINED_EVENTS_POINTS;
+    } else {
+        return COMPETITION_POINTS;
+    }
+};
 
 // Update the existing calculatePerformancesBatch function to use the correct points table
 export const calculatePerformancesBatch = (basePoints, eventType, gender = 'mens', season = 'outdoor') => {
