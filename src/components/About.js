@@ -37,26 +37,6 @@ function About() {
         </section>
 
         <section className="about-section">
-          <h2>Competition Levels</h2>
-          <p>
-            The World Athletics Ranking System includes both performance points and placing points. The placing 
-            points vary based on the competition category:
-          </p>
-          <ul>
-            <li><strong>OW</strong> - Olympic Games, World Championships </li>
-            <li><strong>DF</strong> - Diamond League Final </li>
-            <li><strong>GW</strong> - Gold Level World Athletics Events </li>
-            <li><strong>GL</strong> - Diamond League Meetings </li>
-            <li><strong>A</strong> - Category A Competitions </li>
-            <li><strong>B</strong> - Category B Competitions </li>
-            <li><strong>C</strong> - Category C Competitions </li>
-            <li><strong>D</strong> - Category D Competitions </li>
-            <li><strong>E</strong> - Category E Competitions </li>
-            <li><strong>F</strong> - Category F Competitions </li>
-          </ul>
-        </section>
-
-        <section className="about-section">
           <h2>Wind Modifications</h2>
           <p>
             For certain events (sprints, hurdles, long jump, and triple jump), wind conditions affect the scoring. 
@@ -99,13 +79,6 @@ function About() {
             All calculations are based on the official World Athletics Scoring Tables and Competition Regulations. 
             The scoring formulas and competition categories are regularly updated to align with World Athletics 
             standards.
-          </p>
-        </section>
-
-        <section className="about-section author-section">
-          <h2>The Author</h2>
-          <p>
-            This calculator was developed by Simen Guttormsen, a Norwegian pole vaulter and master's student at Duke University. All questions or suggested improvements can be directed to <a href="mailto:simen.guttormsen@gmail.com">simen.guttormsen@gmail.com</a>.
           </p>
         </section>
 
@@ -240,6 +213,15 @@ function About() {
             <p>Source: <a href="https://worldathletics.org/world-ranking-rules/track-field-events-2024" target="_blank" rel="noopener noreferrer">World Athletics Ranking Rules 2024</a></p>
           </div>
         </section>
+
+        <section className="about-section author-section">
+          <h2>The Author</h2>
+          <p>
+            This calculator was developed by Simen Guttormsen, a Norwegian pole vaulter and master's student at Duke University. All questions or suggested improvements can be directed to <a href="mailto:simen.guttormsen@gmail.com">simen.guttormsen@gmail.com</a>.
+          </p>
+        </section>
+
+
       </div>
     </div>
   );
