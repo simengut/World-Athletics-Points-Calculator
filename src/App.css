@@ -919,3 +919,86 @@ h4, h5, h6 { font-size: 10px; }
 .table-info p:last-child {
   margin-bottom: 0;
 }
+
+.disclaimer-wrapper {
+  margin: 0.25rem auto;
+  max-width: 1200px;
+  padding: 0;
+}
+
+.disclaimer-toggle {
+  background: none;
+  border: none;
+  color: #e2e8f0;
+  font-size: 0.9rem;
+  padding: 0.25rem 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.disclaimer-toggle:hover {
+  opacity: 1;
+}
+
+.disclaimer-content {
+  background-color: rgba(108, 117, 125, 0.3);
+  margin-top: 0.25rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  color: #e2e8f0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.disclaimer-content ul {
+  list-style-type: disc;
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+.disclaimer-content li {
+  margin-bottom: 0.5rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .disclaimer-wrapper {
+    margin: 0.5rem;
+  }
+  
+  .disclaimer-content {
+    font-size: 0.8rem;
+    padding: 0.75rem;
+  }
+  
+  .disclaimer-toggle {
+    font-size: 0.8rem;
+  }
+}
+
+/* Target the calculator form to reduce its top margin */
+.calculator-wrapper, 
+.main-content,
+.content-container {
+  margin-top: 0.25rem;
+}
+
+/* Ensure no extra spacing from paragraph margins */
+.disclaimer-content p {
+  margin: 0.5rem 0;
+}

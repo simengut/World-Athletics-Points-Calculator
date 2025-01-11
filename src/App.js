@@ -10,6 +10,7 @@ import EventComparison from './components/EventComparison';
 import { calculatePoints, calculatePerformance } from './utils/calculators';
 import { EVENT_CODES } from './utils/eventCodes';
 import { needsWindInput } from './utils/windModification';
+import Disclaimer from './components/Disclaimer';
 
 function App() {
   const [activeTab, setActiveTab] = useState('calculator');
@@ -105,6 +106,7 @@ function App() {
   return (
     <div className="App">
       <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
+      <Disclaimer />
       <main className="main-content">
         {activeTab === 'calculator' ? (
           <div className="calculator-page">
