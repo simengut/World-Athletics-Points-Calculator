@@ -14,16 +14,14 @@ function About() {
           </p>
           <p>
             The scoring tables are regularly updated to reflect current world records and performance standards. 
-            The current scoring tables were last updated in 2022, incorporating new world records and performance trends.
+            The current scoring tables were last updated <a href="https://worldathletics.org/news/news/scoring-tables-2025" target="_blank" rel="noopener noreferrer">Jan. 9th, 2025</a>, incorporating new performance trends.
           </p>
         </section>
 
         <section className="about-section">
           <h2>How it Works</h2>
           <p>
-            The scoring system uses mathematical formulas that take into account world records and the general 
-            progression of performances in each event. Each performance is converted into points, typically ranging 
-            from 0 to approximately 1400 points.
+            The scoring system uses mathematical formulas that take into account the level, depth, and progression of performances in each event. Each performance is converted into points, ranging from 0 to 1400 points.
           </p>
           <p>
             The formulas consider:
@@ -32,7 +30,6 @@ function About() {
             <li>The type of event (track, field, or combined events)</li>
             <li>Gender-specific standards</li>
             <li>Indoor vs outdoor conditions</li>
-            <li>Technical differences between events</li>
           </ul>
         </section>
 

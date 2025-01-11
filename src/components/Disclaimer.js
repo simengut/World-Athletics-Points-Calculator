@@ -18,8 +18,8 @@ function Disclaimer() {
           <ul>
             <li>While we strive for accuracy, there may be small variations in calculations as World Athletics has not publicly released their official scoring coefficients</li>
             <li>Some scoring ranges and competition points are approximated based on available data</li>
-            <li>The platform is continuously being updated and may occasionally experience bugs or technical issues</li>
-            <li>Additional unofficial events and features will be added over time</li>
+            <li>The platform is  being updated and may occasionally experience bugs or technical issues</li>
+            <li>Additional unofficial events and features will be added soon</li>
             <li>This tool is provided for reference purposes only and should not be considered official</li>
           </ul>
           <p>We welcome feedback and bug reports to help improve the accuracy and functionality of this service.</p>
