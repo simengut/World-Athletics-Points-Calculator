@@ -16,7 +16,7 @@ function App() {
   const [activeTab, setActiveTab] = useState('calculator');
   const [gender, setGender] = useState('mens');
   const [season, setSeason] = useState('outdoor');
-  const [mode, setMode] = useState('performance');
+  const [mode, setMode] = useState('points');
   const [eventType, setEventType] = useState('100m');
   const [performance, setPerformance] = useState('');
   const [points, setPoints] = useState(null);
