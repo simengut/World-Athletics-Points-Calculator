@@ -687,37 +687,6 @@ h4, h5, h6 { font-size: 10px; }
   border: 1px solid rgba(148, 163, 184, 0.1);
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .about-container {
-    padding: 1rem;
-  }
-  
-  .about-content {
-    padding: 1.5rem;
-  }
-  
-  .about-content h1 {
-    font-size: 1.8rem;  /* Reduced from 2rem */
-  }
-  
-  .about-section {
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-  }
-  
-  .about-section h2 {
-    font-size: 1.1rem;  /* Reduced from 1.2rem */
-  }
-  
-  .about-section p {
-    font-size: 0.85rem;  /* Reduced from 0.9rem */
-  }
-  
-  .about-section ul li {
-    font-size: 0.85rem;  /* Added to match paragraph size */
-  }
-}
 
 /* Add subtle animations */
 @keyframes fadeIn {
@@ -771,13 +740,13 @@ h4, h5, h6 { font-size: 10px; }
 
 /* Update the width of the calculator and results sections */
 .calculator {
-  width: 100%; /* Change from 33.33% */
+  width: 100%; 
   padding-right: 20px;
 }
 
 .results {
-  width: 100%; /* Change from 66.66% */
-  padding-left: 20px;
+  width: 100%; 
+  padding-left: 10px;
 }
 
 /* Base layout */
@@ -788,25 +757,21 @@ h4, h5, h6 { font-size: 10px; }
 .calculator-page, .competition-page {
   display: flex;
   gap: 20px;
-  padding: 20px;
 }
+
+
 
 
 /* Change widths of calcualtor vs. output */
-
 .calculator-sidebar{ 
   width: 50%;
 }
-
 .calculator-main{
-  width: 50%;
+  width: 45%;
 }
-
-
 .competition-sidebar {
   width: 35%;
 }
-
 .competition-main {
   width: 65%;
 }
@@ -834,14 +799,6 @@ h4, h5, h6 { font-size: 10px; }
   .competition-table table {
     width: 100%;
     min-width: 300px;   /* Minimum width to ensure readability */
-  }
-
-
-  /* Optional: hide less important columns on very small screens */
-  @media (max-width: 360px) {
-    .competition-table .optional-column {
-      display: none;
-    }
   }
 
   .meet-row {
@@ -885,19 +842,21 @@ h4, h5, h6 { font-size: 10px; }
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   }
 
-  h1 {
-    font-size: 1.2rem;
-  }
-
-  h2 {
-    font-size: 1.0rem;
-  }
+  h1 {font-size: 1.2rem}
+  h2 {font-size: 1.0rem}
 
   .calculator-form input,
   .calculator-form select {
     font-size: 0.7rem; /* Prevents iOS zoom on focus */
   }
 
+  .calculator-sidebar{
+    width: 100%;
+  }
+
+  .competition-sidebar{
+    width: 100%;
+  }
   /* Navbar adjustments */
   .navbar {
     padding: 10px;
@@ -906,7 +865,17 @@ h4, h5, h6 { font-size: 10px; }
   .nav-links {
     gap: 10px;
   }
+
 }
+
+/* Optional: hide less important columns on very small screens */
+@media (max-width: 360px) {
+  .competition-table .optional-column {
+    display: none;
+  }
+}
+
+
 
 /* Remove dark mode changes */
 @media (prefers-color-scheme: dark) {
@@ -1108,6 +1077,38 @@ h4, h5, h6 { font-size: 10px; }
   }
 }
 
+/* Responsive adjustments in about section*/
+@media (max-width: 768px) {
+  .about-container {
+    padding: 1rem;
+  }
+  
+  .about-content {
+    padding: 1.5rem;
+  }
+  
+  .about-content h1 {
+    font-size: 1.8rem;  /* Reduced from 2rem */
+  }
+  
+  .about-section {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .about-section h2 {
+    font-size: 1.1rem;  /* Reduced from 1.2rem */
+  }
+  
+  .about-section p {
+    font-size: 0.85rem;  /* Reduced from 0.9rem */
+  }
+  
+  .about-section ul li {
+    font-size: 0.85rem;  /* Added to match paragraph size */
+  }
+}
+
 @media (max-width: 768px) {
   /* Target all calculator instances */
   .calculator-wrapper,
@@ -1149,19 +1150,19 @@ h4, h5, h6 { font-size: 10px; }
   .competition-page {
     display: flex;
     width: 100%;
-    padding: 10px;
   }
 
-  .competition-sidebar,
-  .competition-main {
-    width: 100%;
-    margin: 10px 0 20px;
-    padding: 10px;
+  .calculator-sidebar{
+    width: 95%;
+  }
+
+
+  .competition-sidebar{
+    width: 95%;
   }
 
   .competition-table {
     margin: 10px 0 20px;
-    padding: 10px;
   }
 }
 
