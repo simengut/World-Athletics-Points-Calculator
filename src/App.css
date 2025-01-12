@@ -18,16 +18,23 @@ body {
   background: var(--background);
   color: var(--text);
   font-size: 14px;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 
 .App {
   min-height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .main-content {
   max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .content-container {
@@ -35,6 +42,8 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   min-height: calc(100vh - 100px);
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .calculator-wrapper {
@@ -465,6 +474,8 @@ h4, h5, h6 { font-size: 10px; }
 .competition-page {
   display: flex;
   width: 100%;
+  overflow-x: auto !important;
+  width: auto !important;
 }
 
 .competition-sidebar {
@@ -1171,4 +1182,52 @@ h4, h5, h6 { font-size: 10px; }
   outline: none;
   border-color: var(--primary);
   box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+/* Lock horizontal scrolling globally */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.App {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.content-container,
+.main-content {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Allow horizontal scrolling for competition page */
+.competition-page {
+  overflow-x: auto !important;  /* Override the global lock */
+  width: auto !important;
+}
+
+.competition-page .content-container,
+.competition-page .main-content {
+  overflow-x: auto !important;
+  width: auto !important;
+}
+
+@media (max-width: 768px) {
+  .content-container,
+  .main-content,
+  .calculator-page {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+  
+  /* Keep competition page scrollable */
+  .competition-page,
+  .competition-page .content-container,
+  .competition-page .main-content {
+    overflow-x: auto !important;
+    width: auto !important;
+  }
 }
