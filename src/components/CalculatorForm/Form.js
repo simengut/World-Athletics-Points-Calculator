@@ -79,7 +79,11 @@ function Form({
 
       <div>
         <label>Event:</label>
-        <select value={eventType} onChange={(e) => setEventType(e.target.value)}>
+        <select 
+          className="event-select"
+          value={eventType} 
+          onChange={(e) => setEventType(e.target.value)}
+        >
           <optgroup label="Track Events">
             {season === 'indoor' ? (
               <>
@@ -140,6 +144,7 @@ function Form({
       <div>
         <label>{mode === 'points' ? 'Result:' : 'Points:'}</label>
         <input
+          className="result-input"
           type="text"
           value={mode === 'points' ? performance : points}
           onChange={(e) => mode === 'points' ? setPerformance(e.target.value) : setPoints(e.target.value)}
