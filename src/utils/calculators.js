@@ -13,7 +13,7 @@ export const calculatePoints = ({
   try {
     if (mode === 'points') {
       const formattedPerformance = formatTimeInput(performance, eventType);
-      if (['800m', '1500m', '3000m', '5000m', '10000m'].includes(eventType) && !formattedPerformance) {
+      if (['800m', '1500m', '3000m', '3000mSC', '5000m', '10000m'].includes(eventType) && !formattedPerformance) {
         console.error('Invalid time format');
         return null;
       }

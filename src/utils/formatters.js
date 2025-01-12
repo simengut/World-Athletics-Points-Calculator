@@ -3,7 +3,7 @@ export const formatTimeInput = (input, eventType) => {
   if (!input) return null;
 
   // Handle middle/long distance events with mm:ss.xx format
-  if (['800m', '1500m', '3000m', '5000m', '10000m'].includes(eventType)) {
+  if (['800m', '1500m', '3000m', '3000mSC', '5000m', '10000m'].includes(eventType)) {
     const match = input.match(/^(\d+):(\d+\.?\d*)$/);
     if (match) {
       const minutes = parseInt(match[1]);
