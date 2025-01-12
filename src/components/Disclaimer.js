@@ -22,7 +22,7 @@ function Disclaimer() {
             <li>Additional unofficial events and features will be added soon</li>
             <li>This tool is provided for reference purposes only and should not be considered official</li>
           </ul>
-          <p>We welcome feedback and bug reports to help improve the accuracy and functionality of this service.</p>
+          <p>We welcome feedback and bug reports to help improve the accuracy and functionality of this service. Feel free to contact me <a href="mailto:simen@stavhopp.no">here</a></p>
         </div>
       )}
     </div>

@@ -11,7 +11,7 @@ function EventComparison({ points, gender, season }) {
       if (gender === 'mens' && ['100mH', 'Pentathlon'].includes(event)) return false;
       if (gender === 'womens' && ['110mH'].includes(event)) return false;
       if (gender === 'womens' && ['110mH', 'Decathlon', 'Heptathlon'].includes(event) && season === 'indoor') return false;
-      if (season === 'indoor' && ['100m', '100mH', '110mH', '400mH', '5000m', '10000m', 'Discus Throw', 'Hammer Throw', 'Javelin Throw', 'Decathlon'].includes(event)) return false;
+      if (season === 'indoor' && ['100m', '100mH', '110mH', '400mH', '5000m', '10000m', '3000mSC','Discus Throw', 'Hammer Throw', 'Javelin Throw', 'Decathlon'].includes(event)) return false;
       return true;
     });
   }, [gender, season]);
